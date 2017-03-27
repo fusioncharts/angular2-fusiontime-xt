@@ -106,10 +106,6 @@ export class WebComponent implements OnInit {
           },
           margin: {
             left: 0
-          },
-          preDrawHook: function() {
-            this.config.x -= 5;
-            this.getParents()[0].cacheByName('standard-period-selector-ext').config.x -= 7;
           }
         }],
         crossline: [{

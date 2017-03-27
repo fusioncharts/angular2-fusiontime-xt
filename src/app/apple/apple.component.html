@@ -1,1 +1,241 @@
-<fusiontime [dataSource]="dataSource" [width]="width" [height]="height"></fusiontime>
+<fusiontime [dataSource]="dataSource" [width]="width" [height]="height">
+  <div class="loader"></div>
+</fusiontime>
+<br>
+<div id="code-listing">
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <a href="#html_code" data-toggle="tab" aria-expanded="true">HTML</a>
+    </li>
+    <li>
+      <a href="#javascript_code" data-toggle="tab" aria-expanded="true">Javascript</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div id="html_code" class="tab-pane fade in active">
+<pre class="code-tab  language-markup">
+<code class="language-markup">
+&lt;fusiontime [dataSource]="dataSource" [width]="width" [height]="height"&gt;&lt;/fusiontime&gt;
+</code>
+</pre>
+    </div>
+    <div id="javascript_code" class="tab-pane fade">
+<pre class="code-tab  language-javascript">
+<!-- <code class="language-javascript">
+  import {
+    Component,
+    OnInit
+  } from '@angular/core';
+
+  @Component({
+    selector: 'app-apple',
+    templateUrl: './apple.component.html',
+    styleUrls: ['./apple.component.css']
+  })
+  export class AppleComponent implements OnInit {
+
+    width = "850";
+    height = "450";
+    dataSource = {};
+
+    ngOnInit() {
+      let data = [
+        "6/9/2014",
+        "7/23/2014",
+        "7/24/2014",
+        "7/25/2014",
+        "10/2/2014",
+        "10/3/2014",
+        "10/6/2014",
+        "10/7/2014",
+        "10/8/2014",
+        "10/9/2014",
+        "10/10/2014",
+        "10/13/2014",
+        "10/14/2014",
+        "10/15/2014",
+        "10/16/2014",
+        "10/17/2014",
+        "10/20/2014",
+        ...
+      ];
+      let values = [
+        [
+          "92.699997",
+          "93.879997",
+          "91.75",
+          "93.699997"
+        ],
+        [
+          "94.730003",
+          "95.050003",
+          "93.57",
+          "94.25"
+        ]
+        ...
+      ];
+      this.dataSource = {
+        chart: {
+          axes: [{
+            x: {},
+            y: {
+              name: {
+                label: {
+                  text: 'PRICE (USD)'
+                }
+              },
+              numberFormatter: {
+                config: {
+                  'fill': '',
+                  'align': '',
+                  'sign': '',
+                  'symbol': '',
+                  'zero': '',
+                  'width': '',
+                  'comma': '',
+                  'precision': '.1s',
+                  'type': 's'
+                },
+                suffix: '',
+                prefix: '$'
+              },
+            }
+          }],
+
+          datasets: [{
+            "category": {
+              "dateformat": "%m/%d/%Y",
+              "data": data
+            },
+            "dataset": [{
+              "uid": "ds-1",
+              "series": [{
+                "plot": {
+                  "type": "candlestick",
+                  "style": {
+                    "fill": "#7f7f7f"
+                  },
+                  "bear": {
+                    "style": {
+                      "fill": "#FF0000",
+                      "stroke": "#C1C0C3"
+                    }
+                  },
+                  "bull": {
+                    "style": {
+                      "fill": "#31908E",
+                      "stroke": "#C1C0C3"
+                    }
+                  },
+                  "_wick": {
+                    "style": {
+                      "stroke": "#C1C0C3"
+                    }
+                  }
+                },
+                "name": "AAPL",
+                "data": values
+
+              }]
+            }]
+          }],
+          "caption": [{
+            "title": {
+              "text": "Apple Inc. (AAPL)",
+              "style": {
+                "font-size": "20px",
+                "fill": "#545454"
+              }
+            },
+            "subtitle": {
+              "text": "Since stock split",
+              "style": {
+                "font-size": "15px",
+                "font-weight": "Semibold",
+                "fill": "#7B7B7B"
+              }
+            }
+          }],
+          "legend": [{
+            "hide": true
+          }],
+          "canvas": [{
+            "_style": {
+              "fill": "#333333",
+              "fill-opacity": 1
+            },
+            "uid": "canvas-1",
+            "divlines": {
+              "style": {
+                "stroke-dasharray": 5,
+                "fill": "#dbdbdb",
+                "stroke-width": "0.5",
+                "fill-opacity": "0",
+                "stroke": "#575757"
+              }
+            }
+          }],
+          "navigator": [{
+            "scroller": {
+              "hide": false
+            },
+            "style": {
+              "border-bottom": "1px #aaaaaa solid"
+            },
+            "standardTimeZone": {
+              "label": {
+                "text": ""
+              }
+            }
+          }],
+          crossline: [{
+            vertical: {
+              label: {
+                formatter: function(val) {
+                  return this.formatter.formatAs(val, '%b %d, %Y');
+                },
+              }
+            }
+          }],
+          "tooltip": [{
+            numberFormatter: {
+              config: {
+                'fill': '',
+                'align': '',
+                'sign': '',
+                'symbol': '',
+                'zero': '',
+                'width': '',
+                'comma': '',
+                'precision': '',
+                'type': 's'
+              },
+              suffix: ' USD',
+              prefix: ''
+            }
+          }]
+        },
+        "extensions": {
+          "date-range-chooser": {
+            "disabled": false
+          },
+          "standard-period-selector": {
+            "default-select": "YTD",
+            "disabled": false
+          },
+          "growth-analyser": {
+            "disabled": true
+          },
+          "data-aggregator": {
+            "disabled": true
+          }
+        }
+      }
+    }
+
+  }
+</code> -->
+</pre>
+    </div>
+  </div>
+</div>

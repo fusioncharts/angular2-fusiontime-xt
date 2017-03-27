@@ -1,1 +1,33 @@
-<router-outlet></router-outlet>
+<div class="row">
+  <div role="tabpanel" class="container tab-pane">
+    <div class="row">
+      <div class="col-md-3 tablist">
+        <div class="list-group" role="tablist">
+          <span class="list-group-item examples" id="for1" [routerLink]="['/']">
+            <h4>Apple Stock</h4>
+            <p>Candle Stick Time Series chart</p>
+          </span>
+          <span class="list-group-item examples" id="for3" [routerLink]="['/slack']">
+            <h4>Slack Conversations</h4>
+            <p>Fetch data from a JSON URL</p>
+          </span>
+          <span class="list-group-item examples" id="for2" [routerLink]="['/mobile']">
+            <h4>Different Mobile OS</h4>
+            <p>Manipulate Data</p>
+          </span>
+          <span class="list-group-item examples" id="for4" [routerLink]="['/web']">
+            <h4>Web Visits and Downloads</h4>
+            <p>Simple Line Series</p>
+          </span>
+          <span class="list-group-item examples" id="for5" [routerLink]="['/ebola']">
+            <h4>Ebola Outbreak</h4>
+            <p>Fetch and compare three differnet examples</p>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <router-outlet></router-outlet>
+      </div>
+      </div>
+    </div>
+  </div>

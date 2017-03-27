@@ -14,6 +14,9 @@ import { MobileComponent } from './mobile/mobile.component';
 
 const appRoutes: Routes = [
   {
+    path: '', component: AppleComponent
+  },
+  {
     path: 'web', component: WebComponent
   },
   {
@@ -24,11 +27,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'slack', component: SlackComponent
-  },
-  {
-    path: 'apple', component: AppleComponent
   }
-]
+];
 
 @NgModule({
   declarations: [
