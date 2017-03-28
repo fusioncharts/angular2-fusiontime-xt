@@ -7,93 +7,132 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src='/assets/lib/fusioncharts.js'></script>
-	<script src='/assets/lib/fusioncharts.timeseries.js'></script>
-	<script src='/assets/lib/data-aggregator-es5.js'></script>
-	<script src='/assets/lib/growth-analyser-es5.js'></script>
-	<script src='/assets/lib/date-range-chooser-es5.js'></script>
-	<script src='/assets/lib/standard-period-selector-es5.js'></script>
+  <script src='/assets/lib/fusioncharts.js'></script>
+  <script src='/assets/lib/fusioncharts.timeseries.js'></script>
+  <script src='/assets/lib/data-aggregator-es5.js'></script>
+  <script src='/assets/lib/growth-analyser-es5.js'></script>
+  <script src='/assets/lib/date-range-chooser-es5.js'></script>
+  <script src='/assets/lib/standard-period-selector-es5.js'></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"  type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js" type="text/javascript"></script>
+  <style>
+    fusiontime {
+      width: 850px;
+      max-width: 850px;
+      height: 450px;
+      max-height: 450px;
+      min-height: 450px;
+      display: inline-block;
+    }
+
+    .list-group-item {
+      cursor: pointer;
+    }
+
+    .loader {
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 
 <body>
-	<div class="row">
-		<div class="container">
-			<div class="masthead">
-				<ul class="nav nav-pills pull-right gh-pages-navbar-pills">
-					<li><a href="/">Angular 2 Fusiontime XT</a></li>
-				</ul>
-				<h3><a href="http://fusioncharts.com/"><img src="https://fusioncharts.github.io/react-fusioncharts-component/example/dist/images/210x38xlogo.png.pagespeed.ic.KZD9tJ7qIK.png" class="logo"></a></h3>
-			</div>
-		</div>
-	</div>
+  <div class="row">
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right gh-pages-navbar-pills">
+          <li><a href="/">Angular 2 Fusiontime XT</a></li>
+        </ul>
+        <h3><a href="http://fusioncharts.com/"><img src="https://fusioncharts.github.io/react-fusioncharts-component/example/dist/images/210x38xlogo.png.pagespeed.ic.KZD9tJ7qIK.png" class="logo"></a></h3>
+      </div>
+    </div>
+  </div>
 
   <div class="jumbotron">
-            <div class="container">
-                <div class="col-md-2">
-                    <img src="http://fusioncharts.github.io/angular-fusioncharts/demos/images/ng-fc-logo.png">
-                </div>
-                <div class="col-md-10">
-                    <h2 style="color: #fff">Angular 2 FusionTime XT</h2>
-                    <span style="color:#fff">Simple Angular 2 Module for FusionTime JavaScript Charting Library.</span>
-                </div>
-            </div>
-            <div class="container">
-                <ul class="nav nav-tabs gh-pages-nav-tabs" role="tablist">
-                    <li id='home-navigate' role="presentation" class="navigation-tab active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-                    <li id='getting-started-navigate' role="presentation" class="navigation-tab"><a href="#getting-started" aria-controls="getting-started" role="tab" data-toggle="tab">Getting Started</a></li>
-                    <li id='dashboard-navigate' role="presentation" class="navigation-tab"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">Dashboard</a></li>
-                    <li id='examples-navigate' role="presentation" class="navigation-tab"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab">Demos</a></li>
+    <div class="container">
+      <div class="col-md-2">
+        <img src="http://fusioncharts.github.io/angular-fusioncharts/demos/images/ng-fc-logo.png">
+      </div>
+      <div class="col-md-10">
+        <h2 style="color: #fff">Angular 2 FusionTime XT</h2>
+        <span style="color:#fff">Simple Angular 2 Module for FusionTime JavaScript Charting Library.</span>
+      </div>
+    </div>
+    <div class="container">
+      <ul class="nav nav-tabs gh-pages-nav-tabs" role="tablist">
+        <li id='home-navigate' role="presentation" class="navigation-tab active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+        <li id='getting-started-navigate' role="presentation" class="navigation-tab"><a href="#getting-started" aria-controls="getting-started" role="tab" data-toggle="tab">Getting Started</a></li>
+        <li id='dashboard-navigate' role="presentation" class="navigation-tab"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">Dashboard</a></li>
+        <li id='examples-navigate' role="presentation" class="navigation-tab"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab">Demos</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+      <div class="container">
+        <div class="row">
+          <div class="well well-info well-rounded clearfix">
+            <div class="col-md-6">
+              <div class="block block-features">
+                <h3>Features</h3>
+                <ul type="circle">
+                  <li>Add a chart using simple component</li>
+                  <li> Easy to use data passing</li>
                 </ul>
+              </div>
             </div>
-        </div>
-	<div class="tab-content">
-		<div role="tabpanel" class="tab-pane active" id="home">
-			<div class="container">
-				<div class="row">
-					<div class="well well-info well-rounded clearfix">
-						<div class="col-md-6">
-							<div class="block block-features">
-								<h3>Features</h3>
-								<ul type="circle">
-									<li>Add a chart using simple component</li>
-									<li> Easy to use data passing</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="block block-community">
-								<h3>Community</h3>
-								<ul type="circle">
+            <div class="col-md-3">
+              <div class="block block-community">
+                <h3>Community</h3>
+                <ul type="circle">
 
-									<li><a href="https://github.com/fusioncharts/angular2-fusiontime-xt/" target="_black">Github Repo</a></li>
-									<li><a href="https://github.com/fusioncharts/angular2-fusiontime-xt/issues" target="_black">Issues</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="block block-support">
-								<h3>Support</h3>
-								<p>Simply open up <a href="https://github.com/fusioncharts/angular2-fusiontime-xt/issues/new" target="_black">a github issue</a> with your question/bug report/suggestion.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div role="tabpanel" class="tab-pane" id="getting-started">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h2>QuickStart</h2>
-						<h3>Step 1: Import fusiontime module into your app.module.ts</h3>
-						<pre>
+                  <li><a href="https://github.com/fusioncharts/angular2-fusiontime-xt/" target="_black">Github Repo</a></li>
+                  <li><a href="https://github.com/fusioncharts/angular2-fusiontime-xt/issues" target="_black">Issues</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="block block-support">
+                <h3>Support</h3>
+                <p>Simply open up <a href="https://github.com/fusioncharts/angular2-fusiontime-xt/issues/new" target="_black">a github issue</a> with your question/bug report/suggestion.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="getting-started">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>QuickStart</h2>
+            <h3>Step 1: Import fusiontime module into your app.module.ts</h3>
+            <pre>
 <code class="language-javascript">
 import { FusiontimeModule } from './fusiontime/fusiontime.module';
 @NgModule({
@@ -116,12 +155,12 @@ export class AppModule {
 }
 </code></pre>
 
-						<h3>Step 2: Use fusiontime component into target HTML element</h3>
-						<pre><code class="language-markup">&lt;fusiontime [dataSource]="dataSource" [width]="width" [height]="height"&gt;&lt;/fusiontime&gt;</code></pre>
+            <h3>Step 2: Use fusiontime component into target HTML element</h3>
+            <pre><code class="language-markup">&lt;fusiontime [dataSource]="dataSource" [width]="width" [height]="height"&gt;&lt;/fusiontime&gt;</code></pre>
 
-						<h3>Step 3: Provide details</h3>
-						<p>You need to pass height , width and dataSource.</p>
-						<pre>
+            <h3>Step 3: Provide details</h3>
+            <p>You need to pass height , width and dataSource.</p>
+            <pre>
 <code class="language-javascript">
   import {
     Component,
@@ -143,29 +182,29 @@ export class AppModule {
     }
   }
 </code></pre>
-						<h3>Licensing</h3>
-						<p>Angular 2 FusionTime is open-source and distributed under the terms of the MIT/X11 License. You will still need to download and include FusionCharts in your page. This project provides no direct functionality. You can <a href="http://fusioncharts.com/download/">Download an evaluation</a>.
-							You will still need to purchase a FusionCharts license to use in a commercial environment (FusionCharts is <a href="http://www.fusioncharts.com/download/free/">free for non-commercial and personal use</a>) .</p>
+            <h3>Licensing</h3>
+            <p>Angular 2 FusionTime is open-source and distributed under the terms of the MIT/X11 License. You will still need to download and include FusionCharts in your page. This project provides no direct functionality. You can <a href="http://fusioncharts.com/download/">Download an evaluation</a>.
+              You will still need to purchase a FusionCharts license to use in a commercial environment (FusionCharts is <a href="http://www.fusioncharts.com/download/free/">free for non-commercial and personal use</a>) .</p>
 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div role="tabpanel" class="tab-pane" id="examples">
-			<app-root></app-root>
-		</div>
-		<div role="tabpanel" class="tab-pane" id="dashboard">
-			<div class="container">
-				<div class="row">
-					<div class="well well-info well-rounded clearfix">
-						<h3>Dashboard</h3>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="examples">
+      <app-root></app-root>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="dashboard">
+      <div class="container">
+        <div class="row">
+          <div class="well well-info well-rounded clearfix">
+            <h3>Dashboard</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script type="text/javascript">
-    setInterval(function () {
+    setInterval(function() {
       Prism.highlightAll();
     }, 1000);
   </script>
