@@ -20,27 +20,27 @@
 </pre>
     </div>
     <div id="javascript_code" class="tab-pane fade">
-<pre class="code-tab  language-javascript">
-<!-- <code class="language-javascript">
-import { Component, OnInit } from '@angular/core';
+<pre class="code-tab">
+<code class="language-javascript">
+import {{ "{" }} Component, OnInit {{ "}" }}from '@angular/core';
 
-  @Component({
+  @Component({{ "{" }}
     selector: 'app-slack',
     templateUrl: './slack.component.html',
     styleUrls: ['./slack.component.css']
-  })
-  export class SlackComponent implements OnInit {
+  {{ "}" }})
+  export class SlackComponent implements OnInit {{ "{" }}
     width = "850";
     height = "450";
-    dataSource = {};
+    dataSource = {{ "{" }} {{ "}" }};
 
-    reqData = {
-      dates: {},
-      dms: {},
-      gms: {}
-    };
+    reqData = {{ "{" }}
+      dates: {{ "{" }}{{ "}" }},
+      dms: {{ "{" }}{{ "}" }},
+      gms: {{ "{" }}}
+    {{ "}" }};
 
-    filterDate(dataStore) {
+    filterDate(dataStore) {{ "{" }}
     	var dates = [],
     		dms = [],
     		gms = [],
@@ -48,7 +48,7 @@ import { Component, OnInit } from '@angular/core';
     		i = 0,
     		obj;
 
-    	for (i; i < len; i += 1) {
+    	for (i; i < len; i += 1) {{ "{" }}
     		obj = dataStore[i];
     		dates.push(obj.day);
     		dms.push(obj.data.num_messages_dms);
@@ -60,219 +60,219 @@ import { Component, OnInit } from '@angular/core';
     	this.reqData.gms = gms;
     }
 
-    ngOnInit() {
+    ngOnInit() {{ "{" }}
       this.filterDate(res.all);
-      this.dataSource = {
-      	chart: {
-      		container: {
-      			bound: {
-      				_style: {
+      this.dataSource = {{ "{" }}
+      	chart: {{ "{" }}
+      		container: {{ "{" }}
+      			bound: {{ "{" }}
+      				_style: {{ "{" }}
       					fill: '#ffffff',
       					'border-radius': '8'
       				}
       			}
-      		},
-      		axes: [{
-      			x: {
+      		{{ "}" }},
+      		axes: [{{ "{" }}
+      			x: {{ "{" }}
       				singleTick: true,
-      				major: {
-      					tick: {
+      				major: {{ "{" }}
+      					tick: {{ "{" }}
       						hide: false,
-      						_style: {
+      						_style: {{ "{" }}
       							stroke: '#a2a3a5'
       						}
-      					},
-      					text: {
-      						_style: {
+      					{{ "}" }},
+      					text: {{ "{" }}
+      						_style: {{ "{" }}
       							'font-size': '10px',
       							'fill': '#a2a3a5'
       						}
       					}
-      				},
-      				minor: {
-      					tick: {
+      				{{ "}" }},
+      				minor: {{ "{" }}
+      					tick: {{ "{" }}
       						hide: false,
-      						_style: {
+      						_style: {{ "{" }}
       							fill: '#a2a3a5'
       						}
-      					},
-      					text: {
-      						_style: {
+      					{{ "}" }},
+      					text: {{ "{" }}
+      						_style: {{ "{" }}
       							'font-size': '10px',
       							'fill': '#a2a3a5'
       						}
       					}
       				}
-      			},
-      			y: {
-      				name: {
-      					label: {
+      			{{ "}" }},
+      			y: {{ "{" }}
+      				name: {{ "{" }}
+      					label: {{ "{" }}
       						text: 'Number of members messaging',
-      						style: {
+      						style: {{ "{" }}
       							fill: '#aeaeae'
       						}
-      					},
-      					margin: {
+      					{{ "}" }},
+      					margin: {{ "{" }}
       						top: 3,
       						bottom: 12
       					}
-      				},
-      				minor: {
-      					tick: {
+      				{{ "}" }},
+      				minor: {{ "{" }}
+      					tick: {{ "{" }}
       						length: 10
       					}
-      				},
-      				numberFormatter: {
-      					config: {
+      				{{ "}" }},
+      				numberFormatter: {{ "{" }}
+      					config: {{ "{" }}
       						'precision': '2'
       					}
       				}
       			}
       		}],
-      		caption: [{
-      			title: {
+      		caption: [{{ "{" }}
+      			title: {{ "{" }}
       				text: 'Slack usage statistics',
-      				"style": {
+      				"style": {{ "{" }}
       					"font-size": "20px",
       					"fill": "#545454"
       				}
       			}
       		}],
-      		datasets: [{
-      			category: {
+      		datasets: [{{ "{" }}
+      			category: {{ "{" }}
       				dateformat: '%Y-%m-%d',
       				data: this.reqData.dates
-      			},
-      			dataset: [{
+      			{{ "}" }},
+      			dataset: [{{ "{" }}
       				uid: 'ds-1',
-      				series: [{
-      						plot: {
+      				series: [{{ "{" }}
+      						plot: {{ "{" }}
       							type: "line",
-      							style: {
+      							style: {{ "{" }}
       								_stroke: "#ff9614",
       								'stroke-width': 1
       							}
-      						},
+      						{{ "}" }},
       						name: "People directly messaging",
       						data: this.reqData.dms,
 
-      					},
-      					{
-      						plot: {
+      					{{ "}" }},
+      					{{ "{" }}
+      						plot: {{ "{" }}
       							type: "line",
-      							style: {
+      							style: {{ "{" }}
       								_stroke: "#fbda9a",
       								'stroke-width': 1
       							}
-      						},
+      						{{ "}" }},
       						name: "People messaging in groups",
       						data: this.reqData.gms
       					}
       				]
       			}]
       		}],
-      		canvas: [{
+      		canvas: [{{ "{" }}
       			uid: 'cnv-1',
-      			axes: function(store) {
+      			axes: function(store) {{ "{" }}
       				return store.getAxesByIndex(0);
-      			},
-      			dataset: function(store) {
+      			{{ "}" }},
+      			dataset: function(store) {{ "{" }}
       				return store.getDatasetsByIndex(0);
-      			},
-      			divlines: {
-      				_style: {
+      			{{ "}" }},
+      			divlines: {{ "{" }}
+      				_style: {{ "{" }}
       					fill: 'none',
       					_stroke: '#f2de98',
       					'stroke-width': 0.5
-      				}
-      			}
-      		}],
-      		legend: [{
-      			position: function(obj) {
+      				{{ "}" }}
+      			{{ "}" }}
+      		{{ "}" }}],
+      		legend: [{{ "{" }}
+      			position: function(obj) {{ "{" }}
       				return obj.top;
-      			},
-      			alignment: function(obj) {
+      			{{ "}" }},
+      			alignment: function(obj) {{ "{" }}
       				return obj.right;
-      			},
-      			preDrawHook: function centerAlign() {
+      			{{ "}" }},
+      			preDrawHook: function centerAlign() {{ "{" }}
       				var self = this,
       					parentsArr = self.getParents(),
       					canvas = parentsArr[0].cacheByName('canvasContainer'),
       					config = this.config;
 
       				config.x = canvas.getX() + canvas.getWidth() - self.getWidth();
-      			}
+      			{{ "}" }}
       		}],
-      		navigator: [{
-      			activeWindow: {
-      				selectionBox: {
-      					style: {
+      		navigator: [{{ "{" }}
+      			activeWindow: {{ "{" }}
+      				selectionBox: {{ "{" }}
+      					style: {{ "{" }}
       						_fill: '270-rgba(254, 254, 254, .7):0-rgba(243, 243, 243, .7):100',
       						_stroke: '#000000',
       						'stroke-width': 0
-      					}
-      				}
-      			},
-      			scroller: {
+      					{{ "}" }}
+      				{{ "}" }}
+      			{{ "}" }},
+      			scroller: {{ "{" }}
       				hide: true
-      			},
-      			standardTimeZone: {
-      				label: {
+      			{{ "}" }},
+      			standardTimeZone: {{ "{" }}
+      				label: {{ "{" }}
       					text: 'GMT +5:30',
-      					style: {
+      					style: {{ "{" }}
       						'font-size': '10px'
-      					}
-      				}
-      			},
-      			margin: {
+      					{{ "}" }}
+      				{{ "}" }}
+      			{{ "}" }},
+      			margin: {{ "{" }}
       				right: 10
-      			},
-      			style: {
+      			{{ "}" }},
+      			style: {{ "{" }}
       				stroke: 'none',
       				'fill-opacity': 1,
       				'border-top': '1px #aaaaaa solid',
       				'border-right': '0px #ffffff solid',
       				'border-bottom': '1px #aaaaaa solid',
       				'border-left': '0px #ffffff solid'
-      			}
-      		}],
-      		crossline: [{
-      			vertical: {
-      				label: {
-      					formatter: function(val) {
+      			{{ "}" }}
+      		{{ "}" }}],
+      		crossline: [{{ "{" }}
+      			vertical: {{ "{" }}
+      				label: {{ "{" }}
+      					formatter: function(val) {{ "{" }}
       						return this.formatter.formatAs(val, '%b %d, %Y');
-      					},
-      				}
-      			},
-      			horizontal: {
-      				label: {
-      					formatter: function(val) {
+      					{{ "}" }},
+      				{{ "}" }}
+      			{{ "}" }},
+      			horizontal: {{ "{" }}
+      				label: {{ "{" }}
+      					formatter: function(val) {{ "{" }}
       						return parseInt(val, 10) + '';
-      					},
-      				}
-      			}
-      		}]
-      	},
-      	extensions: {
-      		'date-range-chooser': {
+      					{{ "}" }},
+      				{{ "}" }}
+      			{{ "}" }}
+      		{{ "}" }}]
+      	{{ "}" }},
+      	extensions: {{ "{" }}
+      		'date-range-chooser': {{ "{" }}
       			disabled: true
-      		},
-      		'standard-period-selector': {
+      		{{ "}" }},
+      		'standard-period-selector': {{ "{" }}
       			disabled: true
-      		},
-      		'growth-analyser': {
+      		{{ "}" }},
+      		'growth-analyser': {{ "{" }}
       			disabled: true
-      		},
-      		'data-aggregator': {
+      		{{ "}" }},
+      		'data-aggregator': {{ "{" }}
       			disabled: true
-      		}
-      	}
-      };
-    }
+      		{{ "}" }}
+      	{{ "}" }}
+      {{ "}" }};
+    {{ "}" }}
 
-  }
+  {{ "}" }}
 
-</code> -->
+</code>
 </pre>
     </div>
   </div>

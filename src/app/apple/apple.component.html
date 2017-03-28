@@ -20,25 +20,25 @@
 </pre>
     </div>
     <div id="javascript_code" class="tab-pane fade">
-<pre class="code-tab  language-javascript">
-<!-- <code class="language-javascript">
-  import {
+<pre class="code-tab">
+<code class="language-javascript">
+  import {{ '{' }}
     Component,
     OnInit
-  } from '@angular/core';
+ {{ '}' }} from '@angular/core';
 
-  @Component({
+  @Component({{ '{' }}
     selector: 'app-apple',
     templateUrl: './apple.component.html',
     styleUrls: ['./apple.component.css']
   })
-  export class AppleComponent implements OnInit {
+  export class AppleComponent implements OnInit {{ '{' }}
 
     width = "850";
     height = "450";
-    dataSource = {};
+    dataSource = {{ '{' }}};
 
-    ngOnInit() {
+    ngOnInit() {{ '{' }}
       let data = [
         "6/9/2014",
         "7/23/2014",
@@ -74,18 +74,18 @@
         ]
         ...
       ];
-      this.dataSource = {
-        chart: {
-          axes: [{
-            x: {},
-            y: {
-              name: {
-                label: {
+      this.dataSource = {{ '{' }}
+        chart: {{ '{' }}
+          axes: [{{ '{' }}
+            x: {{ '{' }}},
+            y: {{ '{' }}
+              name: {{ '{' }}
+                label: {{ '{' }}
                   text: 'PRICE (USD)'
                 }
               },
-              numberFormatter: {
-                config: {
+              numberFormatter: {{ '{' }}
+                config: {{ '{' }}
                   'fill': '',
                   'align': '',
                   'sign': '',
@@ -102,33 +102,33 @@
             }
           }],
 
-          datasets: [{
-            "category": {
+          datasets: [{{ '{' }}
+            "category": {{ '{' }}
               "dateformat": "%m/%d/%Y",
               "data": data
             },
-            "dataset": [{
+            "dataset": [{{ '{' }}
               "uid": "ds-1",
-              "series": [{
-                "plot": {
+              "series": [{{ '{' }}
+                "plot": {{ '{' }}
                   "type": "candlestick",
-                  "style": {
+                  "style": {{ '{' }}
                     "fill": "#7f7f7f"
                   },
-                  "bear": {
-                    "style": {
+                  "bear": {{ '{' }}
+                    "style": {{ '{' }}
                       "fill": "#FF0000",
                       "stroke": "#C1C0C3"
                     }
                   },
-                  "bull": {
-                    "style": {
+                  "bull": {{ '{' }}
+                    "style": {{ '{' }}
                       "fill": "#31908E",
                       "stroke": "#C1C0C3"
                     }
                   },
-                  "_wick": {
-                    "style": {
+                  "_wick": {{ '{' }}
+                    "style": {{ '{' }}
                       "stroke": "#C1C0C3"
                     }
                   }
@@ -139,34 +139,34 @@
               }]
             }]
           }],
-          "caption": [{
-            "title": {
+          "caption": [{{ '{' }}
+            "title": {{ '{' }}
               "text": "Apple Inc. (AAPL)",
-              "style": {
+              "style": {{ '{' }}
                 "font-size": "20px",
                 "fill": "#545454"
               }
             },
-            "subtitle": {
+            "subtitle": {{ '{' }}
               "text": "Since stock split",
-              "style": {
+              "style": {{ '{' }}
                 "font-size": "15px",
                 "font-weight": "Semibold",
                 "fill": "#7B7B7B"
               }
             }
           }],
-          "legend": [{
+          "legend": [{{ '{' }}
             "hide": true
           }],
-          "canvas": [{
-            "_style": {
+          "canvas": [{{ '{' }}
+            "_style": {{ '{' }}
               "fill": "#333333",
               "fill-opacity": 1
             },
             "uid": "canvas-1",
-            "divlines": {
-              "style": {
+            "divlines": {{ '{' }}
+              "style": {{ '{' }}
                 "stroke-dasharray": 5,
                 "fill": "#dbdbdb",
                 "stroke-width": "0.5",
@@ -175,31 +175,31 @@
               }
             }
           }],
-          "navigator": [{
-            "scroller": {
+          "navigator": [{{ '{' }}
+            "scroller": {{ '{' }}
               "hide": false
             },
-            "style": {
+            "style": {{ '{' }}
               "border-bottom": "1px #aaaaaa solid"
             },
-            "standardTimeZone": {
-              "label": {
+            "standardTimeZone": {{ '{' }}
+              "label": {{ '{' }}
                 "text": ""
               }
             }
           }],
-          crossline: [{
-            vertical: {
-              label: {
-                formatter: function(val) {
+          crossline: [{{ '{' }}
+            vertical: {{ '{' }}
+              label: {{ '{' }}
+                formatter: function(val) {{ '{' }}
                   return this.formatter.formatAs(val, '%b %d, %Y');
                 },
               }
             }
           }],
-          "tooltip": [{
-            numberFormatter: {
-              config: {
+          "tooltip": [{{ '{' }}
+            numberFormatter: {{ '{' }}
+              config: {{ '{' }}
                 'fill': '',
                 'align': '',
                 'sign': '',
@@ -215,18 +215,18 @@
             }
           }]
         },
-        "extensions": {
-          "date-range-chooser": {
+        "extensions": {{ '{' }}
+          "date-range-chooser": {{ '{' }}
             "disabled": false
           },
-          "standard-period-selector": {
+          "standard-period-selector": {{ '{' }}
             "default-select": "YTD",
             "disabled": false
           },
-          "growth-analyser": {
+          "growth-analyser": {{ '{' }}
             "disabled": true
           },
-          "data-aggregator": {
+          "data-aggregator": {{ '{' }}
             "disabled": true
           }
         }
@@ -234,7 +234,7 @@
     }
 
   }
-</code> -->
+</code>
 </pre>
     </div>
   </div>

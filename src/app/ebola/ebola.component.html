@@ -20,35 +20,34 @@
 </pre>
     </div>
     <div id="javascript_code" class="tab-pane fade">
-<pre class="code-tab  language-javascript">
-<!-- <code class="language-javascript">
-import { Component, OnInit } from '@angular/core';
-
+<pre class="code-tab">
+<code class="language-javascript">
+import {{ "{" }} Component, OnInit } from '@angular/core';
 const res = [...];
 
-@Component({
+@Component({{ "{" }}
   selector: 'app-ebola',
   templateUrl: './ebola.component.html',
   styleUrls: ['./ebola.component.css']
 })
-export class EbolaComponent implements OnInit {
+export class EbolaComponent implements OnInit {{ "{" }}
   width = "850";
   height = "450";
-  dataSource = {};
-  ngOnInit() {
+  dataSource = {{ "{" }}};
+  ngOnInit() {{ "{" }}
     var dates = [],
       sierra = [],
       guinea = [],
       liberia = [];
 
-    res.forEach(function(item) {
-      if (item.Country == "Guinea") {
+    res.forEach(function(item) {{ "{" }}
+      if (item.Country == "Guinea") {{ "{" }}
         guinea.push(item.value);
       }
-      if (item.Country == "Liberia") {
+      if (item.Country == "Liberia") {{ "{" }}
         liberia.push(item.value);
       }
-      if (item.Country == "Sierra Leone") {
+      if (item.Country == "Sierra Leone") {{ "{" }}
         sierra.push(item.value);
         dates.push(item.Date)
       }
@@ -56,89 +55,89 @@ export class EbolaComponent implements OnInit {
 
     dates = dates.sort();
 
-    this.dataSource = {
-      chart: {
-        axes: [{
-          x: {},
-          y: {
-            name: {
-              label: {
+    this.dataSource = {{ "{" }}
+      chart: {{ "{" }}
+        axes: [{{ "{" }}
+          x: {{ "{" }}{{ "}" }},
+          y: {{ "{" }}
+            name: {{ "{" }}
+              label: {{ "{" }}
                 text: 'Ebola Outbreak count'
               }
             }
           }
         }],
-        datasets: [{
-          "category": {
+        datasets: [{{ "{" }}
+          "category": {{ "{" }}
             "dateformat": "%Y-%m-%e",
             "data": dates
-          },
-          "dataset": [{
-            "series": [{
-                "plot": {
+          {{ "}" }},
+          "dataset": [{{ "{" }}
+            "series": [{{ "{" }}
+                "plot": {{ "{" }}
                   "type": "column"
-                },
+                {{ "}" }},
                 "name": "Sierra Leone",
                 "data": sierra
-              },
-              {
-                "plot": {
+              {{ "}" }},
+              {{ "{" }}
+                "plot": {{ "{" }}
                   "type": "column"
-                },
+                {{ "}" }},
                 "name": "Guinea",
                 "data": guinea
-              }, {
-                "plot": {
+              {{ "}" }}, {{ "{" }}
+                "plot": {{ "{" }}
                   "type": "column"
-                },
+                {{ "}" }},
                 "name": "Liberia",
                 "data": liberia
               }
             ]
           }]
         }],
-        "caption": [{
-          "title": {
+        "caption": [{{ "{" }}
+          "title": {{ "{" }}
             "text": "Ebola Outbreak in West Africa",
-            "style": {
+            "style": {{ "{" }}
               "font-size": "20px",
               "fill": "#545454"
             }
-          },
-          "subtitle": {
+          {{ "}" }},
+          "subtitle": {{ "{" }}
             "text": "Outbreak Distribution",
-            "style": {
+            "style": {{ "{" }}
               "font-size": "15px",
               "font-weight": "Semibold",
               "fill": "#7B7B7B"
             }
           }
         }],
-        "legend": [{
-          layout: function(obj) {
+        "legend": [{{ "{" }}
+          layout: function(obj) {{ "{" }}
             return obj.block;
-          },
-          position: function(obj) {
+          {{ "}" }},
+          position: function(obj) {{ "{" }}
             return obj.right;
-          },
-          orientation: function(obj) {
+          {{ "}" }},
+          orientation: function(obj) {{ "{" }}
             return obj.vertical;
-          },
-          alignment: function(obj) {
+          {{ "}" }},
+          alignment: function(obj) {{ "{" }}
             return obj.top;
           }
         }],
 
-        "navigator": [{
+        "navigator": [{{ "{" }}
           hide: true
-        }]
-      }
-    };
+        {{ "}" }}]
+      {{ "}" }}
+    {{ "}" }};
 
-  }
+  {{ "}" }}
 
-}
-</code> -->
+{{ "}" }}
+</code>
 </pre>
     </div>
   </div>

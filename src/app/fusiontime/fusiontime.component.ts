@@ -20,8 +20,7 @@ export class FusiontimeComponent implements OnInit, OnChanges {
 
   }
 
-  ngOnInit(): void {
-  
+  renderChart(): void {
     this.config = {
         type: "timeseries",
         width: this.width,
@@ -36,13 +35,21 @@ export class FusiontimeComponent implements OnInit, OnChanges {
     this.chart.render();
   }
 
+  ngOnInit(): void {
+    if (!this.chart) {
+      this.renderChart();
+    }
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     // Catch change and Act upon it
-    //console.log(changes);
+    console.log(changes);
   }
 
   ngOnDestroy() {
-        this.chart.dispose();
+      if (this.chart && this.chart.dispose) {
+          this.chart.dispose();
+      }
     }
 }
 
