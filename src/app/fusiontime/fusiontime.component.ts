@@ -13,8 +13,8 @@ export class FusiontimeComponent implements OnInit, OnChanges {
    @Input() width: string;
    @Input() height: string;
 
-   chart: any = null;
-   config: any = null;
+   chart: any = {};
+   config: any = {};
 
   constructor(private elementRef: ElementRef) {
 
@@ -36,14 +36,18 @@ export class FusiontimeComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    if (!this.chart) {
-      this.renderChart();
-    }
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     // Catch change and Act upon it
     console.log(changes);
+
+    if (changes.hasOwnProperty("dataSource") && changes["dataSource"].currentValue) {
+      console.log(changes["dataSource"].currentValue);
+      this.config.dataSource = clone(changes["dataSource"].currentValue);
+      this.renderChart();
+    }
   }
 
   ngOnDestroy() {

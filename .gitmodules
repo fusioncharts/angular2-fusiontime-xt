@@ -1,0 +1,6 @@
+[submodule "src/app/src/assets/datarepo"]
+	path = src/app/src/assets/datarepo
+	url = https://github.com/fusioncharts/fusiontime-xt-demos.git
+[submodule "src/assets/datarepo"]
+	path = src/assets/datarepo
+	url = https://github.com/fusioncharts/fusiontime-xt-demos.git
