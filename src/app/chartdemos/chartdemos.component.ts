@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-declare var tsData: any;
+import tsData from '../../assets/datarepo/';
+
+declare var Prism: any;
 
 @Component({
   selector: 'app-chartdemos',
@@ -16,16 +18,19 @@ export class ChartdemosComponent implements OnInit {
   tsData = {};
   chartsData = {};
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.chartsData = Object.keys(tsData);
     this.tsData = tsData;
     this.dataSource = this.tsData[this.chartsData[0]].data;
+    Prism.highlightAll();
   }
 
   onLinkClick(selectedItem) {
-  this.dataSource = this.tsData[selectedItem].data;
+    this.dataSource = this.tsData[selectedItem].data;
+    Prism.highlightAll();
   }
 
 }
