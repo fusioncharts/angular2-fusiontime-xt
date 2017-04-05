@@ -66,7 +66,7 @@ module.exports = function() {
 var content = __webpack_require__(456);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(481)(content, {});
+var update = __webpack_require__(484)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -99,7 +99,7 @@ exports.push([module.i, "/*!\n * Bootstrap v3.3.7 (http://getbootstrap.com)\n * 
 
 /***/ }),
 
-/***/ 481:
+/***/ 484:
 /***/ (function(module, exports) {
 
 /*
@@ -352,7 +352,7 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 486:
+/***/ 489:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(292);
@@ -360,5 +360,5 @@ module.exports = __webpack_require__(292);
 
 /***/ })
 
-},[486]);
+},[489]);
 //# sourceMappingURL=styles.bundle.js.map
