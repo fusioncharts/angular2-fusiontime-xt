@@ -1,27 +1,57 @@
-# Fusiontime
+## QuickStart
+### Step 1: Import fusiontime module into your app.module.ts
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.0.
+```javascript
+import { FusiontimeModule } from 'angular2-fusiontime-xt';
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+@NgModule({
+declarations: [
+  AppComponent
+],
+imports: [
+  RouterModule.forRoot(appRoutes),
+  BrowserModule,
+  FormsModule,
+  FusiontimeModule
+],
+providers: [],
+bootstrap: [AppComponent]
+})
+export class AppModule {
+  constructor() {
 
-## Code scaffolding
+  }
+}
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+### Step 2: Use fusiontime component into target template
+```html
+<fusiontime [dataSource]="dataSource" [width]="width" [height]="height"></fusiontime>
+```
 
-## Build
+### Step 3: Provide details
+You need to pass height , width and dataSource.
+```javascript
+import {
+Component,
+OnInit
+} from '@angular/core';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+@Component({
+selector: 'app-root',
+templateUrl: './app.component.html',
+styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  width = "850";
+  height = "450";
+  dataSource = {};
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  ngOnInit() {
+    this.dataSource = { }; // pass the chart config
+  }
+}
+```
+<h3>Licensing</h3>
+<p>Angular 2 FusionTime is open-source and distributed under the terms of the MIT/X11 License. You will still need to download and include FusionCharts in your page. This project provides no direct functionality. You can <a href="http://fusioncharts.com/download/">Download an evaluation</a>.
+  You will still need to purchase a FusionCharts license to use in a commercial environment (FusionCharts is <a href="http://www.fusioncharts.com/download/free/">free for non-commercial and personal use</a>) .</p>

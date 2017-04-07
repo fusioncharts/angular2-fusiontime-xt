@@ -10,6 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "main": "./src/fusiontime.module",
   "private": true,
   "dependencies": {
     "@angular/common": "^2.4.0",
