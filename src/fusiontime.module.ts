@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FusiontimeComponent } from './fusiontime.component';
-
-
+import { FusionTimeComponent } from './fusiontime.component';
 
 @NgModule({
-  declarations: [ FusiontimeComponent ],
-  exports: [ FusiontimeComponent ]
+  declarations: [ FusionTimeComponent ],
+  exports: [ FusionTimeComponent ]
 })
-export class FusiontimeModule {
+export class FusionTimeModule {
   constructor(){
-    
+
   }
 }

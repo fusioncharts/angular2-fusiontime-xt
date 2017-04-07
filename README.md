@@ -2,7 +2,7 @@
 ### Step 1: Import fusiontime module into your app.module.ts
 
 ```javascript
-import { FusiontimeModule } from 'angular2-fusiontime-xt';
+import { FusionTimeModule } from 'angular2-fusiontime-xt';
 
 @NgModule({
 declarations: [
@@ -12,7 +12,7 @@ imports: [
   RouterModule.forRoot(appRoutes),
   BrowserModule,
   FormsModule,
-  FusiontimeModule
+  FusionTimeModule
 ],
 providers: [],
 bootstrap: [AppComponent]

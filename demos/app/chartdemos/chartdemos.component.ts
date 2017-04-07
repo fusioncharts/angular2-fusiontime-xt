@@ -13,13 +13,11 @@ export class ChartdemosComponent implements OnInit {
 
   width = "850";
   height = "450";
-
   dataSource = {};
   tsData = {};
   chartsData = {};
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
     this.chartsData = Object.keys(tsData);
@@ -32,5 +30,4 @@ export class ChartdemosComponent implements OnInit {
     this.dataSource = this.tsData[selectedItem].data;
     Prism.highlightAll();
   }
-
 }

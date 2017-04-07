@@ -4,15 +4,13 @@ import * as FusionCharts from "fusioncharts";
 
 @Component({
   selector: 'fusiontime',
-  template: '<div></div>',
-  styles: [':host { display: block; }']
+  template: '<div></div>'
 })
-export class FusiontimeComponent implements OnInit, OnChanges {
+export class FusionTimeComponent implements OnInit, OnChanges {
 
    @Input() dataSource: any;
    @Input() width: string;
    @Input() height: string;
-
    chart: any = {};
    config: any = {};
 
@@ -25,7 +23,7 @@ export class FusiontimeComponent implements OnInit, OnChanges {
         height: this.height,
         renderAt: this.elementRef.nativeElement,
         dataFormat: 'json',
-        dataSource: clone(this.dataSource)
+        dataSource: this.dataSource
     };
   }
 
@@ -37,17 +35,14 @@ export class FusiontimeComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    // Only render for the for first time
-    if (!this.chart) {
       this._renderChart();
-    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     // For now we need to call the `render` method
     // TODO: for width/height use => resizeTo() && for dataSource => rerender()
     if (this.chart && changes.hasOwnProperty("dataSource") && changes["dataSource"].currentValue) {
-      this.config.dataSource = clone(changes["dataSource"].currentValue);
+      this.config.dataSource = changes["dataSource"].currentValue;
       this._renderChart();
     }
   }
@@ -58,17 +53,3 @@ export class FusiontimeComponent implements OnInit, OnChanges {
       }
     }
 }
-
-var clone = function (obj) {
-    if (obj === null || typeof(obj) !== 'object' || 'isActiveClone' in obj)
-        return obj;
-    var temp = obj.constructor();
-    for (var key in obj) {
-        if (Object.prototype.hasOwnProperty.call(obj, key)) {
-            obj['isActiveClone'] = null;
-            temp[key] = clone(obj[key]);
-            delete obj['isActiveClone'];
-        }
-    }
-    return temp;
-};
