@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "build:source": "ngc -p src/tsconfig.json",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -10,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "main": "./src/fusiontime.module",
+  "main": "./dist/fusiontime.module",
   "private": true,
   "dependencies": {
     "@angular/common": "^2.4.0",
@@ -42,6 +43,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.0",
+    "ts-loader": "^2.0.3",
     "ts-node": "~2.0.0",
     "tslint": "~4.4.2",
     "typescript": "~2.0.0"

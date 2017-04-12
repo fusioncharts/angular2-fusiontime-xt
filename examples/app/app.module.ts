@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { FusionTimeModule } from '../../src/fusiontime.module';
+import { FusionTimeModule } from '../../dist/fusiontime.module';
 import { ChartdemosComponent } from './chartdemos/chartdemos.component';
 
 @NgModule({
