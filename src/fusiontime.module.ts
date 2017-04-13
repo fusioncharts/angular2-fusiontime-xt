@@ -8,6 +8,5 @@ import { FusionTimeComponent } from './fusiontime.component';
 })
 export class FusionTimeModule {
   constructor(){
-
   }
 }

@@ -1,6 +1,7 @@
 import { Component, Input, ElementRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
-import * as FusionCharts from "fusioncharts";
+// TODO: FusionCharts object to be replaced by fusiontime-xt npm module definition.
+declare var FusionCharts: Object;
 
 @Component({
   selector: 'fusiontime',
