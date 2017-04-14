@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build:source": "ngc -p src/tsconfig.json",
+    "build:source": "ngc -p src/tsconfig.json && rm -rf src/node_modules src/*.ngfactory.ts src/*.ngsummary.json",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
